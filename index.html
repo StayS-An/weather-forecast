@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Wheather Forecast</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+
+
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/autoComplete.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500&display=swap" rel="stylesheet">
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=526a828b-e84d-4f0d-9114-fb1d15796dfa&lang=ru_RU" type="text/javascript"></script>
+
+  <script src="autoComplete.js"></script>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row main-col">
+      <div class="col-3">
+        <div class="main">
+            <input class="search" type="text" id = "autoComplete" placeholder="Введите название города" aria-label="Поиск">
+            <div class="info">
+              <img src="img/sunny.svg" class="big-img">
+              <h1 class="temperature">9°C</h1>
+              <h2 id="city-name">Таганрог, RU</h2>
+              <h3 id="day-data">Monday, 13:17</h3>
+            </div>
+            <div class="cloudiness">
+              <span class="clouds">Clouds - 75%</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-9 side-col shadow-inset">
+        <div class="side">
+          <div class="navbar">
+             <h4 class="period">Неделя</h4>
+             <div class="btn-group degree" role="group">
+              <input type="radio" class="btn-check btn-group-check" name="btnradio" id="btnradio1" autocomplete="off" checked disabled>
+              <label class="btn btn-outline-primary" for="btnradio1">°C</label>
+              <input type="radio" class="btn-check btn-group-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio2">°F</label>
+            </div>
+          </div>
+
+          <div class="row days">
+            <div class="col pl-n">
+              <div class="card text-center block-1 day shadow">
+                <div class="card-body">
+                  <div class="card-title title-1">Пн</div><img src="img/sunny.svg" class="card-img p-2 img-1">
+                  <div class="card-subtitle p-2 value-1">5°</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col">
+              <div class="card text-center block-2 day shadow">
+                <div class="card-body">
+                  <div class="card-title title-2">Вт</div><img src="img/sunny.svg" class="card-img p-2 img-2">
+                  <div class="card-subtitle p-2 value-2">5°</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card text-center block-3 day shadow">
+                <div class="card-body">
+                  <div class="card-title title-3">Ср</div><img src="img/sunny.svg" class="card-img p-2 img-3">
+                  <div class="card-subtitle p-2 value-3">5°</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card text-center block-4 day shadow">
+                <div class="card-body">
+                  <div class="card-title title-4">Чт</div><img src="img/sunny.svg" class="card-img p-2 img-4">
+                  <div class="card-subtitle p-2 value-4">5°</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card text-center block-5 day shadow">
+                <div class="card-body">
+                  <div class="card-title title-5">Пт</div><img src="img/sunny.svg" class="card-img p-2 img-5">
+                  <div class="card-subtitle p-2 value-5">5°</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card text-center block-6 day shadow">
+                <div class="card-body">
+                  <div class="card-title title-6">Сб</div><img src="img/sunny.svg" class="card-img p-2 img-6">
+                  <div class="card-subtitle p-2 value-6">5°</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card text-center block-7 day shadow">
+                <div class="card-body">
+                  <div class="card-title title-7">Вс</div><img src="img/sunny.svg" class="card-img p-2 img-7">
+                  <div class="card-subtitle p-2 value-7">5°</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlights">
+            <h4>События на сегодня</h4>
+            
+            <div class="row">
+              <div class="row col-8 row-cols-3">
+                <div class="col">
+                  <div class="card mt-20 text-left highlight shadow"><span class="card-title card-title-highlights">UV
+                      Index</span>
+                    <div class="card-subtitle uv index">1</div><span class="card-subtitle uv-description">High Risk</span>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card mt-20 text-left highlight shadow"><span class="card-title card-title-highlights">Wind
+                      Status</span>
+                    <div class="wind-status index">2m/sec</div><span class="card-subtitle wind-description">Light breeze</span>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card mt-20 text-left highlight shadow"><span
+                      class="card-title card-title-highlights">Sunrise & Sunset</span>
+                    <div class="index">
+                      <div class="sunrise"><img src="img/up.svg" class="card-img-highlights">07:02</div>
+                      <div class="sunset"><img src="img/down.svg" class="card-img-highlights">16:20</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card mt-20 text-left highlight shadow"><span
+                      class="card-title card-title-highlights">Humidity</span>
+                    <div class="humidity-control">
+                      <div class="humidity index">81%</div>
+                      <div class="progress">
+                        <div class="progress-bar"></div>
+                      </div>
+                    </div><span class="card-subtitle humidity-description">Miserable</span>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card mt-20 text-left highlight shadow"><span
+                      class="card-title card-title-highlights">Visibility</span>
+                    <div class="visibility index">10m</div><span class="card-subtitle visibility-description">Good visibility</span>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card mt-20 text-left highlight shadow"><span class="card-title card-title-highlights">Min
+                      & Max temperature</span>
+                    <div class="index">
+                      <div class="min"><img src="img/empty.svg" class="card-img-highlights"
+                          style="margin-left: 10px;">7°C</div>
+                      <div class="max"><img src="img/notempty.svg" class="card-img-highlights"
+                          style="margin-left: 10px;">9°C</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="card text-center map shadow" id="map"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+    <script src="cities.js"></script>
+    <script src="scales.js"></script>
+    <script src="moment.js"></script>
+    <script src="main.js"></script>
+  </body>
+
+</html>
