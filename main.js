@@ -246,13 +246,13 @@ function fillFields (ind = 0) {
   for (let index = today; index <= 7; index++) {
     document.querySelector(".img-" + index).src =
       "https://www.weatherbit.io/static/img/icons/" +
-      daysObject.data[index].weather.icon +
+      daysObject.data[index - today].weather.icon +
       ".png";
     document.querySelector(`.block-${index} .card-subtitle`).textContent =
       "д: " +
-      Math.round(getTemperature(daysObject.data[index].high_temp)) +
+      Math.round(getTemperature(daysObject.data[index - today].high_temp)) +
       "° н: " +
-      Math.round(getTemperature(daysObject.data[index].low_temp)) +
+      Math.round(getTemperature(daysObject.data[index - today].low_temp)) +
       "°";
   }
 
